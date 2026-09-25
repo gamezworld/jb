@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html manifest="css.manifest">
+<head>
+<title>PS4 Auto_JB (Supported FW: 5.05~13.52) - Ver 1.0</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing Offline Cache: " + Percent + "%";}
+function DisplayCacheProgress(){window.msgs.innerHTML="Cache Installed Successfully ✔";setTimeout(function(){window.msgs.innerHTML="Now Close And Re-Open Your Browser ...";},1500);}
+window.applicationCache.addEventListener("progress",DLProgress,false);
+window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+window.applicationCache.onerror=function(e){window.msgs.innerHTML="Error Installing Cache! - Clear and Re-Open Your Browser ...";};
+</script>
+<script>
+function updateDateTime() {
+	var now = new Date();
+	document.getElementById('date').textContent = String(now.getDate()).padStart(2, '0') + '/' + String(now.getMonth() + 1).padStart(2, '0') + '/' + now.getFullYear();
+	document.getElementById('clock').textContent = String(now.getHours()).padStart(2, '0') + ':' + String(now.getMinutes()).padStart(2, '0') + ':' + String(now.getSeconds()).padStart(2, '0');
+}
+document.addEventListener('DOMContentLoaded', function () { updateDateTime(); setInterval(updateDateTime, 1000); });
+</script>
+<div class="header-meta"><span id="date"></span><h1 class="page-title">PS4 Auto_JB (Supported FW: 5.05~13.52) - Ver 1.0</h1><span id="clock"></span></div>
+<hr>
+<marquee class="warning">&quot;Once you have enabled debug settings, do not ever go into *Debug Settings - System - IDU Mode, or your PS4 will brick!&quot;</marquee>
+<br>
+<h1 id="msgs" class="loading-message hue">Starting Cache Installation...</h1>
+<div class="spinner" aria-hidden="true"></div>
+<div class="credits"><span class="credits-title">Designed &amp; Compiled by : Games_World (Hosur)</span><br><span class="credits-author">Credits : PSJ_L</span></div>
+</body>
+</html>
